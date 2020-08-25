@@ -2,17 +2,21 @@
 
 ## Getting started
 
-```sh
-# build the image; tag image as `3219-nginx`
-docker build -t 3219-nginx .
-# run the image in a container; name the container `3219-nginx`; expose port 8080; automatically remove container when exiting
-docker run --name 3219-nginx -p 80:80 --rm 3219-nginx
-```
+1. Build the image (and tag it as `3219-nginx`):
+    ```sh
+    docker build -t 3219-nginx .
+    ```
+2. Run the `3219-nginx` image (and name the container `3219-nginx`; expose port `80`; automatically remove container when exiting):
+    ```sh
+    docker run --name 3219-nginx -p 80:80 --rm 3219-nginx
+    ```
+3. Visit http://localhost/
 
-1. Visit http://localhost/
-2. Visit http://localhost/another which is proxied to http://localhost/second.html
+## Explanation
 
-## Notes
+Refer to the nginx configuration in `nginx/nginx.conf`. A proxy server is set up at localhost:80, which will redirect all requests to the frontend server located at localhost:8080. Thus, even though the frontend server is located at localhost:8080, visiting http://localhost/ will still serve the appropriate HTML from the frontend server.
+
+## Personal notes
 
 ### Images
 

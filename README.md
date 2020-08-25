@@ -5,7 +5,7 @@
 ```sh
 # build the image; tag image as `3219-nginx`
 docker build -t 3219-nginx .
-# run the image in a container; name the container `3219-nginx`; expose port 8080
+# run the image in a container; name the container `3219-nginx`; expose port 8080; automatically remove container when exiting
 docker run --name 3219-nginx -p 8080:80 --rm 3219-nginx
 ```
 

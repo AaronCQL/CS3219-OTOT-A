@@ -31,7 +31,15 @@ Docker image is hosted at Docker Hub (https://hub.docker.com/r/aaroncql/cs3219-o
 
 ## Explanation
 
-Refer to the nginx configuration in `nginx/nginx.conf`. A proxy server is set up at `localhost:80`, which will redirect all requests to the frontend server located at `localhost:8080`. Thus, even though the frontend server is located at `localhost:8080`, visiting http://localhost:80 will still serve the appropriate HTML from the frontend server.
+Refer to `nginx/nginx.conf` for the frontend and proxy servers' configurations.
+
+### Frontend server
+
+The frontend server, located at `localhost:8080`, will serve the two static HTML files in `src/`. Visiting http://localhost:8080 will not work as we only exposed port `80` when running the image.
+
+### Proxy server
+
+The proxy server, located at `localhost:80`, will reverse proxy all `localhost:80` requests to `localhost:8080`. Thus, even though the frontend server is located at `localhost:8080`, visiting http://localhost:80 will still serve the appropriate HTML file from the frontend server.
 
 ## Personal notes
 

@@ -2,6 +2,18 @@
 
 Docker image is hosted at Docker Hub (https://hub.docker.com/r/aaroncql/cs3219-otot-a) with GitHub integration: any commits to the `master` branch will automatically trigger a new image build.
 
+## Project structure
+
+```sh
+.
+├── nginx/ # contains nginx config
+│   └── nginx.conf
+├── src/ # contains static html files/styles for frontend server
+│   ├── body.css
+│   ├── index.html
+│   └── second.html
+└── Dockerfile # docker container config
+```
 
 ## Getting started
 
